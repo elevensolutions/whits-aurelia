@@ -1,0 +1,49 @@
+{
+	"name": "whits-aurelia",
+	"version": "1.4.1",
+	"description": "Extend whits with Aurelia types, tags, and attributes",
+	"keywords": [
+		"typescript",
+		"html",
+		"templates",
+		"whits",
+		"aurelia"
+	],
+	"author": {
+		"name": "ELEVEN",
+		"url": "https://think11.com"
+	},
+	"license": "MPL-2.0",
+	"type": "module",
+	"repository": {
+		"type": "git",
+		"url": "git+ssh://git@github.com/elevensolutions/whits-aurelia.git"
+	},
+	"publishConfig": {
+		"@elevensolutions:registry": "https://npm.pkg.github.com",
+		"access": "public"
+	},
+	"scripts": {
+		"build": "rm -rf dist/* && tsc",
+		"pretest": "rm -rf coverage && cd tests && rm -rf dist/* && tsc",
+		"test": "NODE_OPTIONS='--experimental-vm-modules --no-warnings' jest",
+		"posttest": "node tests/coverage-badge.mjs",
+		"examples": "cd examples && npm run build"
+	},
+	"dependencies": {
+		"whits": "^1.4.1"
+	},
+	"devDependencies": {
+		"@jest/globals": "^29.7.0",
+		"jest": "^29.7.0",
+		"madge": "^6.1.0",
+		"typedoc": "^0.25.7"
+	},
+	"files": [
+		"dist",
+		"*.d.ts"
+	],
+	"exports": {
+		".": "./dist/index.js"
+	}
+}

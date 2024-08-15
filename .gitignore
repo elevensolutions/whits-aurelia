@@ -1,0 +1,6 @@
+node_modules
+dist
+/examples/*/html
+.whits-dist
+/coverage
+.npmrc
